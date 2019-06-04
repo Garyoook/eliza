@@ -195,6 +195,7 @@ int main(void)
   eliza_destroy(&eliza);
 
   return EXIT_SUCCESS;
+
 }
 
 //int main(void) {
