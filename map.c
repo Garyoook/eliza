@@ -46,13 +46,14 @@ struct map_node *map_insert_internal(struct map_node *node, const char *key, voi
         return NULL;
     }
 
-    if(node->key == NULL) {
+    if (node->key == NULL) {
+        *result = 1;
         return new_node;
     }
 
     if (strcmp(key, node->key) < 0) {
 //        if (node->left->key != NULL) {
-            map_insert_internal(node->left, key, value, result);
+        map_insert_internal(node->left, key, value, result);
 //        } else {
 //            node->left = new_node;
 //            *result = 1;
@@ -61,7 +62,7 @@ struct map_node *map_insert_internal(struct map_node *node, const char *key, voi
 
     if (strcmp(key, node->key) > 0) {
 //        if (node->right->key != NULL) {
-            map_insert_internal(node->right, key, value, result);
+        map_insert_internal(node->right, key, value, result);
 //        } else {
 //            node->right = new_node;
 //            *result = 1;
@@ -81,7 +82,21 @@ struct map_node *map_insert_internal(struct map_node *node, const char *key, voi
 /* Applies the given function pointer to every *value* in the map */
 
 void map_apply_elems(struct map *m, void (*function)(void *)) {
+    assert(m != NULL);
+    map_apply_elems_internal(m->root, function);
+    function(m);
 
+}
+
+
+static void map_apply_elems_internal(struct map_node *node, void (*function)(void *)) {
+    if (node == NULL) {
+        return;
+    }
+    map_apply_elems_internal(node->left, function);
+    map_apply_elems_internal(node->right, function);
+    function(node->value);
+    map_destroy_node(node);
 }
 
 
