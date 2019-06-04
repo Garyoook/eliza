@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/eliza_skeleton.dir/eliza.c.o CMakeFiles/eliza_skeleton.dir/eliza_state.c.o CMakeFiles/eliza_skeleton.dir/list.c.o CMakeFiles/eliza_skeleton.dir/map.c.o CMakeFiles/eliza_skeleton.dir/parser.c.o CMakeFiles/eliza_skeleton.dir/rule.c.o CMakeFiles/eliza_skeleton.dir/string_utils.c.o  -o eliza_skeleton 

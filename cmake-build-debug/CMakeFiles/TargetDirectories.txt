@@ -1,0 +1,3 @@
+/home/yg9418/C/past_test/eliza_skeleton/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yg9418/C/past_test/eliza_skeleton/cmake-build-debug/CMakeFiles/eliza_skeleton.dir
+/home/yg9418/C/past_test/eliza_skeleton/cmake-build-debug/CMakeFiles/edit_cache.dir
